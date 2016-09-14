@@ -93,17 +93,4 @@ function removeDB()
       window.plugins.sqlDB.remove("demo.db", location, rmsuccess,rmerror);  
 }
 
-function copysuccess()
-{
-        //open db and run your queries
-         db = window.sqlitePlugin.openDatabase({name: "demo.db"});.
-}
 
-function copyerror(e)
-{
-        //db already exists or problem in copying the db file. Check the Log.
-        console.log("Error Code = "+JSON.stringify(e));
-        //e.code = 516 => if db exists
-}
-
-```
