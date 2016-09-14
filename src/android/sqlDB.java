@@ -69,6 +69,30 @@ public class sqlDB extends CordovaPlugin {
 			try {
 				error.put("message", "File already exists. Please check table");
 				error.put("code", 516);
+				
+				//if you wish to copy db in any case, do the followings
+			 	cordova.getThreadPool().execute(new Runnable() {
+
+				@Override
+				public void run() {
+					PluginResult plResult = new PluginResult(
+							PluginResult.Status.NO_RESULT);
+					// TODO Auto-generated method stub
+					try {
+						dbhelper.createdatabase(dbpath);
+						plResult = new PluginResult(PluginResult.Status.OK);
+						callbackContext.sendPluginResult(plResult);
+					} catch (Exception e) {
+
+						plResult = new PluginResult(PluginResult.Status.ERROR,
+								e.getMessage());
+						callbackContext.sendPluginResult(plResult);
+					}
+				}
+
+			});	
+				
+				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
