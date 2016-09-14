@@ -1,8 +1,8 @@
 cordova-plugin-dbcopy(the original dbcopy is written by an-rahulpandey)
 =====================
 
-Add a prepopulated SQLite database in your Phonegap/Cordova Android and iOS app.
-(here is a fork project in order to understand the dbcopy process easily)
+Add a prepopulated SQLite database in your Phonegap/Cordova Android and iOS app.<br>
+<b>(here is a fork project in order to understand the dbcopy process easily)</b>
 
 ###Note
 
