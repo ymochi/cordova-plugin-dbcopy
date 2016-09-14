@@ -43,7 +43,7 @@ public class sqlDB extends CordovaPlugin {
 				}
 			} else {
 				plresult = new PluginResult(PluginResult.Status.ERROR,
-						"File Doesn't Exists");
+						"File Doesn't Exists. Please check if file exists or not");
 				callbackContext.sendPluginResult(plresult);
 			}
 			return true;
