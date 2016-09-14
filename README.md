@@ -7,6 +7,7 @@ Add a prepopulated SQLite database in your Phonegap/Cordova Android and iOS app.
 ###Note
 
 The database file may have extensions or not for e.g the db file name would be sample.db or sample.sqlite or sample. It doesn't matter what is the file extension, just remember to use the whole filename with extensions(if having one otherwise not) as a paramter when passing to the plugin methods.
+->For example you have to show your db name like "XXX.db" or "demo.db". 
 
 ###Database file location
 
