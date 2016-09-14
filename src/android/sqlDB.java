@@ -67,7 +67,7 @@ public class sqlDB extends CordovaPlugin {
 
 		if (dbexists) {
 			try {
-				error.put("message", "File already exists");
+				error.put("message", "File already exists. Please check table");
 				error.put("code", 516);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
