@@ -32,7 +32,7 @@ public class sqlDB extends CordovaPlugin {
 			File path = cordova.getActivity().getDatabasePath(db);
 			Boolean fileExists = path.exists();
 			if (fileExists) {
-				boolean deleted = path.delete();
+				boolean deleted = path.delete(); //delete files
 				if (deleted) {
 					plresult = new PluginResult(PluginResult.Status.OK, deleted);
 					callbackContext.sendPluginResult(plresult);
@@ -71,6 +71,24 @@ public class sqlDB extends CordovaPlugin {
 				error.put("code", 516);
 				
 				//if you wish to copy db in any case, do the followings
+				//1) delete exisiting database
+				//2) put a new database
+				String db = args.getString(0);
+				File path = cordova.getActivity().getDatabasePath(db);
+				Boolean fileExists = path.exists();
+				if (fileExists) {
+				boolean deleted = path.delete(); //delete files
+				if (deleted) {
+					plresult = new PluginResult(PluginResult.Status.OK, deleted);
+					callbackContext.sendPluginResult(plresult);
+				} else {
+					plresult = new PluginResult(PluginResult.Status.ERROR,
+							deleted);
+					callbackContext.sendPluginResult(plresult);
+					}
+				}
+				
+				//put a new database
 			 	cordova.getThreadPool().execute(new Runnable() {
 
 				@Override
